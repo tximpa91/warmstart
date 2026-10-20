@@ -1,0 +1,44 @@
+{
+  "fingerprint": "e55ea2245d1c8b9909d515a73ab9d2f8f7dbc051d4585c14746eb0f918b61eb6",
+  "payload": {
+    "format": "warmstart-offline-fixture-v1",
+    "config": {
+      "environment": "local",
+      "semantic_mode": "shadow",
+      "exact_enabled": true,
+      "paid_inference": false,
+      "allow_fixture_seeds": true,
+      "ttl_seconds": 86400,
+      "semantic_threshold": 0.88,
+      "generation_model": "offline-policy-fixture-v1",
+      "embedding_model": "offline-feature-hash-384-v1",
+      "embedding_dimensions": 384,
+      "embedding_pooling": "offline-token-hash",
+      "embedding_normalization": "l2",
+      "prompt_version": "support-json-v1",
+      "schema_version": "answer-v1",
+      "temperature": 0,
+      "max_output_tokens": 512,
+      "reasoning_effort": "low",
+      "embedding_reservation_microusd": 100,
+      "generation_reservation_microusd": 10000,
+      "deadline_seconds": 20,
+      "duplicate_wait_seconds": 2,
+      "lease_seconds": 25
+    },
+    "corpus_sha256": "8e58fc16c1f55cb674a01f5f967ca34437a19bd1305a5de4176659c87e2f6947",
+    "golden_sha256": "bfa3f5133cd9b1f36382fcb2ce27670f6299bb7e6ec5b7f828613342a0617706",
+    "offline_algorithms_sha256": {
+      "guards.py": "17977dad1cdf721b654a8281ba9261efed4a20ada07ce6eb3d32c6125b8d6c19",
+      "inference.py": "3222a67b22c8116f77f265def07836906d0be95193804121cc69685cd13daaf5"
+    },
+    "provenance": {
+      "author": "AI implementation agent",
+      "origin": "original fictional electronics support fixtures",
+      "human_reviewed": false,
+      "admission": "local_fixture_only",
+      "real_customer_data": false
+    }
+  },
+  "update_reason": "Explicit QA repair cycle2: question-attribute and tier admission guards. No expected golden labels changed; no human approval granted."
+}

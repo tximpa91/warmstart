@@ -1,0 +1,63 @@
+name: Correctness and public regression
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  UV_NO_PROGRESS: '1'
+  WRANGLER_SEND_METRICS: 'false'
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          version: '0.12.3'
+      - run: uv sync --frozen
+      - run: uv run python tools/check.py
+      - run: uv run python -m warmstart.evals --suite regression --requests 1000 --output artifacts/traffic.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: offline-evidence
+          path: artifacts/*.json
+          retention-days: 14
+  worker-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          version: '0.12.3'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts
+      - run: uv sync --frozen --group cloud
+      - name: Require reviewed Worker dependency lock
+        run: test -f pylock.toml && git ls-files --error-unmatch pylock.toml
+      - run: uv run --group cloud python tools/build_worker.py
+      - run: uv run --group cloud python tools/worker_smoke.py
+      - run: git diff --exit-code -- pylock.toml
+  required:
+    if: ${{ always() }}
+    needs: [checks, worker-build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail on failures or unexpected skips
+        env:
+          CHECKS: ${{ needs.checks.result }}
+          BUILD: ${{ needs.worker-build.result }}
+        run: test "$CHECKS" = success && test "$BUILD" = success

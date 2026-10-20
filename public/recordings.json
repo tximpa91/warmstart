@@ -1,0 +1,254 @@
+[
+  {
+    "profile": "store_a_ch_standard",
+    "question": "What is the standard shipping cost?",
+    "first": {
+      "answer": "Standard shipping costs CHF 5 per order.",
+      "source_ids": [
+        "store_a_ch_standard:v1:shipping_standard"
+      ],
+      "cache_status": "generated",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "Standard shipping costs CHF 5 per order.",
+      "source_ids": [
+        "store_a_ch_standard:v1:shipping_standard"
+      ],
+      "cache_status": "exact",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_a_ch_standard",
+    "question": "How long can I return unopened products?",
+    "first": {
+      "answer": "Unopened products may be returned within 30 days of delivery.",
+      "source_ids": [
+        "store_a_ch_standard:v1:returns_unopened"
+      ],
+      "cache_status": "generated",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "Unopened products may be returned within 30 days of delivery.",
+      "source_ids": [
+        "store_a_ch_standard:v1:returns_unopened"
+      ],
+      "cache_status": "exact",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_a_ch_standard",
+    "question": "Can I return opened headphones?",
+    "first": {
+      "answer": "Opened headphones are excluded from the ordinary return policy.",
+      "source_ids": [
+        "store_a_ch_standard:v1:returns_opened_headphones"
+      ],
+      "cache_status": "generated",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "Opened headphones are excluded from the ordinary return policy.",
+      "source_ids": [
+        "store_a_ch_standard:v1:returns_opened_headphones"
+      ],
+      "cache_status": "exact",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_a_ch_standard",
+    "question": "my order status",
+    "first": {
+      "answer": "This demo cannot access orders, accounts, payments, or execute instructions.",
+      "source_ids": [],
+      "cache_status": "bypass",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "This demo cannot access orders, accounts, payments, or execute instructions.",
+      "source_ids": [],
+      "cache_status": "bypass",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_a_ch_premium",
+    "question": "What is the standard shipping cost?",
+    "first": {
+      "answer": "Standard shipping costs CHF 0 per order.",
+      "source_ids": [
+        "store_a_ch_premium:v1:shipping_standard"
+      ],
+      "cache_status": "generated",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "Standard shipping costs CHF 0 per order.",
+      "source_ids": [
+        "store_a_ch_premium:v1:shipping_standard"
+      ],
+      "cache_status": "exact",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_a_ch_premium",
+    "question": "How long can I return unopened products?",
+    "first": {
+      "answer": "Unopened products may be returned within 30 days of delivery.",
+      "source_ids": [
+        "store_a_ch_premium:v1:returns_unopened"
+      ],
+      "cache_status": "generated",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "Unopened products may be returned within 30 days of delivery.",
+      "source_ids": [
+        "store_a_ch_premium:v1:returns_unopened"
+      ],
+      "cache_status": "exact",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_a_ch_premium",
+    "question": "Can I return opened headphones?",
+    "first": {
+      "answer": "Opened headphones are excluded from the ordinary return policy.",
+      "source_ids": [
+        "store_a_ch_premium:v1:returns_opened_headphones"
+      ],
+      "cache_status": "generated",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "Opened headphones are excluded from the ordinary return policy.",
+      "source_ids": [
+        "store_a_ch_premium:v1:returns_opened_headphones"
+      ],
+      "cache_status": "exact",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_a_ch_premium",
+    "question": "my order status",
+    "first": {
+      "answer": "This demo cannot access orders, accounts, payments, or execute instructions.",
+      "source_ids": [],
+      "cache_status": "bypass",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "This demo cannot access orders, accounts, payments, or execute instructions.",
+      "source_ids": [],
+      "cache_status": "bypass",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_b_ch_standard",
+    "question": "What is the standard shipping cost?",
+    "first": {
+      "answer": "Standard shipping costs CHF 5 per order.",
+      "source_ids": [
+        "store_b_ch_standard:v1:shipping_standard"
+      ],
+      "cache_status": "generated",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "Standard shipping costs CHF 5 per order.",
+      "source_ids": [
+        "store_b_ch_standard:v1:shipping_standard"
+      ],
+      "cache_status": "exact",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_b_ch_standard",
+    "question": "How long can I return unopened products?",
+    "first": {
+      "answer": "Unopened products may be returned within 14 days of delivery.",
+      "source_ids": [
+        "store_b_ch_standard:v1:returns_unopened"
+      ],
+      "cache_status": "generated",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "Unopened products may be returned within 14 days of delivery.",
+      "source_ids": [
+        "store_b_ch_standard:v1:returns_unopened"
+      ],
+      "cache_status": "exact",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_b_ch_standard",
+    "question": "Can I return opened headphones?",
+    "first": {
+      "answer": "Opened headphones are excluded from the ordinary return policy.",
+      "source_ids": [
+        "store_b_ch_standard:v1:returns_opened_headphones"
+      ],
+      "cache_status": "generated",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "Opened headphones are excluded from the ordinary return policy.",
+      "source_ids": [
+        "store_b_ch_standard:v1:returns_opened_headphones"
+      ],
+      "cache_status": "exact",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  },
+  {
+    "profile": "store_b_ch_standard",
+    "question": "my order status",
+    "first": {
+      "answer": "This demo cannot access orders, accounts, payments, or execute instructions.",
+      "source_ids": [],
+      "cache_status": "bypass",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    },
+    "second": {
+      "answer": "This demo cannot access orders, accounts, payments, or execute instructions.",
+      "source_ids": [],
+      "cache_status": "bypass",
+      "policy_version": "v1",
+      "semantic_shadow_match": false
+    }
+  }
+]

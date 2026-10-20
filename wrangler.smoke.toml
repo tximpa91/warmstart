@@ -1,0 +1,23 @@
+name = "warmstart-runtime-smoke"
+main = "src/smoke_worker.py"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["python_workers"]
+workers_dev = false
+preview_urls = false
+[vars]
+APP_ENV = "staging"
+SMOKE_LOCAL = "true"
+PAID_INFERENCE = "false"
+SEMANTIC_MODE = "off"
+[[d1_databases]]
+binding = "DB"
+database_name = "warmstart-runtime-smoke"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+[durable_objects]
+bindings = [{name = "COORDINATOR", class_name = "PilotCoordinator"}]
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["PilotCoordinator"]
+[observability]
+enabled = false

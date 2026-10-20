@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Warmstart: an evaluation-first AI support answer cache.">
+  <title>Warmstart · Cache lab</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><a href="./" class="brand">warmstart<span> / cache lab</span></a><span id="mode">Recorded demonstration</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">APPLIED AI ENGINEERING / PROJECT 01</p>
+      <h1>A faster answer.<br>A boundary you can inspect.</h1>
+      <p class="lede">Explore support-answer reuse across fictional stores and policy editions.
+      Every answer keeps its source and context.</p>
+    </section>
+    <div class="workspace">
+      <section class="query" aria-labelledby="query-title">
+        <h2 id="query-title">Ask the policy</h2>
+        <label for="profile">Authorized demo profile</label>
+        <select id="profile"><option value="store_a_ch_standard">Store A · Switzerland · Standard</option><option value="store_a_ch_premium">Store A · Switzerland · Premium</option><option value="store_b_ch_standard">Store B · Switzerland · Standard</option></select>
+        <label for="question">Question</label>
+        <select id="question"><option value="What is the standard shipping cost?">What is the standard shipping cost?</option><option value="How long can I return unopened products?">How long can I return unopened products?</option><option value="Can I return opened headphones?">Can I return opened headphones?</option><option value="my order status">Where is my order?</option></select>
+        <button id="ask" type="button">Run request <span aria-hidden="true">↗</span></button>
+        <p class="hint" id="instruction">Run the same question again to inspect an exact hit.</p>
+      </section>
+      <section class="response" aria-labelledby="answer-title" aria-live="polite">
+        <div class="response-head"><h2 id="answer-title">Answer evidence</h2><span id="status">Ready</span></div>
+        <p id="answer">Choose a question and run a request.</p>
+        <dl><div><dt>Policy edition</dt><dd id="version">—</dd></div><div><dt>Source reference</dt><dd id="source">—</dd></div><div><dt>Request</dt><dd id="request">—</dd></div></dl>
+      </section>
+    </div>
+    <section class="notes"><h2>Read the evidence honestly.</h2><p id="disclosure">This public demonstration plays original, deterministic fixtures. No model is called. Policies, seed answers and golden labels are AI-authored drafts awaiting human review. Recorded cache states illustrate the pipeline; they are not production measurements.</p><p>Semantic serving stays gated. Similarity alone cannot authorize reuse across stores, tiers, product conditions or policy editions.</p></section>
+  </main>
+  <footer><span>Fictional policies. Inspectable behavior.</span><span>Python / SQLite / Cloudflare</span></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

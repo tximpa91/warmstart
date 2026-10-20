@@ -1,0 +1,39 @@
+name = "warmstart-staging"
+main = "src/worker.py"
+# Explicitly retain Python 3.13; the later date silently selects a different ABI.
+compatibility_date = "2026-09-01"
+compatibility_flags = ["python_workers"]
+workers_dev = true
+preview_urls = false
+
+[limits]
+cpu_ms = 1000
+
+[vars]
+APP_ENV = "staging"
+PAID_INFERENCE = "false"
+AI_GATEWAY_ID = ""
+AI_GATEWAY_LOG_MODE = "metadata"
+SEMANTIC_MODE = "off"
+SEMANTIC_THRESHOLD = "1.0"
+MONTHLY_BUDGET_MICROUSD = "12000000"
+
+[ai]
+binding = "AI"
+remote = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "warmstart-staging"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[durable_objects]
+bindings = [{ name = "COORDINATOR", class_name = "PilotCoordinator" }]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["PilotCoordinator"]
+
+[observability]
+enabled = false

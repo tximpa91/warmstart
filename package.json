@@ -1,0 +1,7 @@
+{
+  "name": "warmstart-worker-tooling",
+  "private": true,
+  "version": "0.1.0",
+  "engines": {"node": ">=22"},
+  "devDependencies": {"wrangler": "4.151.2"}
+}
